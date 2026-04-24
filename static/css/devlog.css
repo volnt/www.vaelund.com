@@ -175,7 +175,6 @@ body {
 }
 
 .post-body img {
-  height: 128px;
   width: auto;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
