@@ -27,6 +27,7 @@ BASE_TEMPLATE = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} -- Vaelund Devlog</title>
   <link rel="stylesheet" href="/static/css/devlog.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
 </head>
 <body>
   <nav class="devlog-nav">
@@ -59,6 +60,7 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Devlog -- Vaelund</title>
   <link rel="stylesheet" href="/static/css/devlog.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
 </head>
 <body>
   <nav class="devlog-nav">
