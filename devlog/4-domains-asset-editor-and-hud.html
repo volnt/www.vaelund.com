@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#4: Domains, asset editor, and HUD -- Vaelund Devlog</title>
+  <link rel="stylesheet" href="/static/css/devlog.css">
+</head>
+<body>
+  <nav class="devlog-nav">
+    <a href="/#devlog" class="back-link">← Back to site</a>
+    <a href="/" class="site-link">Vaelund</a>
+  </nav>
+  <main class="devlog-post">
+    <header class="post-header">
+      <div class="post-meta">
+        <span class="post-date">24 Apr 2026</span>
+        <span class="post-tag">progress</span>
+      </div>
+      <h1 class="post-title">#4: Domains, asset editor, and HUD</h1>
+    </header>
+    <div class="post-body">
+<p><strong>TL;DR</strong> -- Restructured the codebase into gameplay domains, built an asset editor for layered sprites, added chat and chat bubbles, and continued building out the HUD.</p>
+<h2>What I did</h2>
+<h3>Asset editor and the layering problem</h3>
+<p>Characters in a game wear equipment. That equipment has to animate along with the body, which means drawing each item on top of every frame of every animation. If you have 4 directions (2 are mirrored to get 4), 6 animations (idle, run, attack, throw, etc.), and 50 equipment pieces, that's a lot of sprites to manage and draw.</p>
+<p>The editor helps in two ways. First, it keeps track of what is drawn and what is still missing for each item. Second, it renders items on top of the character sprite at each animation frame so you can see exactly how the item will look as the character animates, without having to load the game.</p>
+<p>There are still frames to draw by hand, but the editor makes it manageable.</p>
+<h3>Chat and chat bubbles</h3>
+<p>Players can talk to each other through a chat window opened with Enter. I also added chat bubbles floating above characters so you can see what people say without opening the chat.</p>
+<h3>HUD</h3>
+<p>The basic HUD is taking shape. Here are a few screenshots of the current state.</p>
+<p>Keybindings settings:</p>
+<p><img src="/static/img/screenshot-keybindings.jpg" alt="Keybindings" style="max-width:100%;"></p>
+<p>Character stats with point allocation:</p>
+<p><img src="/static/img/screenshot-stats.jpg" alt="Stats" style="max-width:100%;"></p>
+<p>Quest log:</p>
+<p><img src="/static/img/screenshot-quest-log.jpg" alt="Quest Log" style="max-width:100%;"></p>
+<p>Inventory with equipment slots and backpack:</p>
+<p><img src="/static/img/screenshot-inventory.jpg" alt="Inventory" style="max-width:100%;"></p>
+<p>Ability bar:</p>
+<p><img src="/static/img/screenshot-ability-bar.jpg" alt="Ability Bar" style="max-width:100%;"></p>
+<h3>Domain reorganization</h3>
+<p>The codebase was still split by technical layer. I reorganized it around gameplay domains: combat, inventory, quests, loot, movement, chat. Each domain owns its logic and its state. This makes it easier to add features without the code getting tangled.</p>
+<h2>What's next</h2>
+<p>More HUD work, more items, more animations. Still in the early building phase.</p>
+    </div>
+    <footer class="post-footer">
+      <a href="/devlog/" class="back-link">← Back to Devlog</a>
+    </footer>
+  </main>
+</body>
+</html>
