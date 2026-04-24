@@ -55,4 +55,4 @@ The codebase was still split by technical layer. I reorganized it around gamepla
 
 ## What's next
 
-I'm spending time playing with the engine to figure out what I actually enjoy. Movement, combat pacing, ability cooldowns, how the tick rate affects responsiveness. Not content, not art -- the feel of the systems underneath.
+I'm spending time playing with the engine to figure out what I actually enjoy. Movement, combat pacing, ability cooldowns, how the tick rate affects responsiveness.
