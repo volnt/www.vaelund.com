@@ -17,6 +17,8 @@ The editor helps in two ways. First, it keeps track of what is drawn and what is
 
 There are still frames to draw by hand, but the editor makes it manageable.
 
+![Asset Editor](/static/img/screenshot-asset-editor.jpg)
+
 ### Chat and chat bubbles
 
 Players can talk to each other through a chat window opened with Enter. I also added chat bubbles floating above characters so you can see what people say without opening the chat.
