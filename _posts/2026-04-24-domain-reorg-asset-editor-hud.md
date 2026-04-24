@@ -1,8 +1,8 @@
 ---
-title: "#4: Domains, asset editor, and HUD"
+title: "#4: Domains, asset editor, and UI"
 date: 2026-04-24
 tag: progress
-excerpt: Reorganized the codebase into gameplay domains, built an asset editor for layered sprites, and continued building out the HUD.
+excerpt: Reorganized the codebase into gameplay domains, built an asset editor for layered sprites, and continued building out the UI.
 ---
 
 **TL;DR** -- Restructured the codebase into gameplay domains, built an asset editor for layered sprites, added chat and chat bubbles, and continued building out the HUD.
@@ -25,9 +25,9 @@ Players can talk to each other through a chat window opened with Enter. I also a
 
 ![Chat](/static/img/screenshot-chat.jpg)
 
-### HUD
+### UI
 
-The basic HUD is taking shape. Here are a few screenshots of the current state.
+The UI is taking shape. Here are a few screenshots of the current state.
 
 Keybindings settings:
 
