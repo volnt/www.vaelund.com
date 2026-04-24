@@ -15,7 +15,7 @@ Characters in a game wear equipment. That equipment has to animate along with th
 
 The editor helps in two ways. First, it keeps track of what is drawn and what is still missing for each item. Second, it renders items on top of the character sprite at each animation frame so you can see exactly how the item will look as the character animates, without having to load the game.
 
-There are still frames to draw by hand, but the editor makes it manageable.
+All frames still need to be drawn by hand but it's easier with the editor.
 
 ![Asset Editor](/static/img/screenshot-asset-editor.jpg)
 
