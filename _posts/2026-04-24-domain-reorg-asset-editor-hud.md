@@ -23,6 +23,8 @@ There are still frames to draw by hand, but the editor makes it manageable.
 
 Players can talk to each other through a chat window opened with Enter. I also added chat bubbles floating above characters so you can see what people say without opening the chat.
 
+![Chat](/static/img/screenshot-chat.jpg)
+
 ### HUD
 
 The basic HUD is taking shape. Here are a few screenshots of the current state.
