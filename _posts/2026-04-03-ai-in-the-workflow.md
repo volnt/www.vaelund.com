@@ -45,11 +45,11 @@ Sprites are generated through PixelLab.ai, partly through a Python script that c
 
 The `meadow_rat` took four generations before the result was usable. The anatomy was wrong across frames, the tail was inconsistent between animation frames. This required iteration, not a single pixel adjustment. The process is not automatic.
 
-![Meadow Rat](/vaelund-website/static/img/sprites/south-east.png)
-![Health Potion](/vaelund-website/static/img/sprites/item_001.png)
-![Leather Armor](/vaelund-website/static/img/sprites/item_010.png)
-![Iron Sword](/vaelund-website/static/img/sprites/item_030.png)
-![Archon's Sigil](/vaelund-website/static/img/sprites/item_052.png)
+![Meadow Rat](/static/img/sprites/south-east.png)
+![Health Potion](/static/img/sprites/item_001.png)
+![Leather Armor](/static/img/sprites/item_010.png)
+![Iron Sword](/static/img/sprites/item_030.png)
+![Archon's Sigil](/static/img/sprites/item_052.png)
 
 *These are icon placeholders, not entity sprites.*
 
