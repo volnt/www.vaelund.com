@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#5: Tick rate, entity refactor, and mob patrol -- Vaelund Devlog</title>
+  <link rel="stylesheet" href="/static/css/devlog.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<body>
+  <nav class="devlog-nav">
+    <a href="/#devlog" class="back-link">← Back to site</a>
+    <a href="/" class="site-link">Vaelund</a>
+  </nav>
+  <main class="devlog-post">
+    <header class="post-header">
+      <div class="post-meta">
+        <span class="post-date">30 Apr 2026</span>
+        <span class="post-tag">progress</span>
+      </div>
+      <h1 class="post-title">#5: Tick rate, entity refactor, and mob patrol</h1>
+    </header>
+    <div class="post-body">
+<p><strong>TL;DR</strong> -- Reduced server tick rate from 20Hz to 10Hz, centralized entity position tracking so spatial indexes stay consistent, replaced wandering pathfinding with hardcoded patrol paths, and fixed a pile of combat and UI bugs.</p>
+<h2>What I did</h2>
+<h3>Tick rate: 20Hz to 10Hz</h3>
+<p>The server now runs at 10 ticks per second instead of 20. This cuts server CPU and bandwidth usage in half. For a grid-based game with discrete cell movement, 10Hz gives enough responsiveness without the overhead.</p>
+<h3>Entity position: fix spatial consistency</h3>
+<p>After teleporting, an entity needs to be removed from the old chunk, added to the new one, grid position updated, blocked cells updated. The old system scattered these steps across different places and they were easy to get wrong. I centralized the position update logic so spatial indexes stay consistent in all cases.</p>
+<h3>Mob patrol paths</h3>
+<p>Mobs were pathfinding to random wander spots, which uses CPU for something that could be hardcoded. I replaced it with predefined patrol paths. We can revisit pathfinding later if mobs need more dynamic behavior.</p>
+<h3>Bug fixes</h3>
+<p>A lot of this week was bug fixes. Here's a partial list:</p>
+<ul>
+<li>Fix mana regen and health regen</li>
+<li>Fix mob attack and chase</li>
+<li>Fix mob interpolation and speed</li>
+<li>Fix AOE hitting multiple mobs correctly</li>
+<li>Fix respawn mobs going crazy</li>
+<li>Fix loot and NPC quest acceptance</li>
+<li>Fix quest descriptions and objectives updating from inventory</li>
+<li>Fix entity IDs on reconnect</li>
+<li>Fix NPC despawn</li>
+<li>Fix Rock Mace ability so it can attack</li>
+<li>Fix level up behavior</li>
+<li>Fix glow and nameplate for larger mobs</li>
+<li>Fix ability bar click handling</li>
+<li>Fix disconnect/reconnect</li>
+</ul>
+<h3>UI</h3>
+<p>Added a login modal. The ability bar is now clickable. Range rendering shows the area of abilities. Quick cast option to bypass the action queue.</p>
+<h2>What's next</h2>
+<p>The current goal is to iterate on the gameplay loop from level 1 to 5 in a starter zone inspired by Mulgore, with its quests, items, and mobs.</p>
+    </div>
+    <footer class="post-footer">
+      <a href="/devlog/" class="back-link">← Back to Devlog</a>
+    </footer>
+  </main>
+</body>
+</html>
