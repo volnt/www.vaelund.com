@@ -45,6 +45,7 @@ A lot of this week was bug fixes. Here's a partial list:
 Added a login modal. The ability bar is now clickable. Range rendering shows the area of abilities. Quick cast option to bypass the action queue.
 
 ![Range Rendering](/static/img/screenshot-range-rendering.jpg)
+![Quick Cast](/static/img/screenshot-quickcast.jpg)
 
 ## What's next
 
