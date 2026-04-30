@@ -44,6 +44,8 @@ A lot of this week was bug fixes. Here's a partial list:
 
 Added a login modal. The ability bar is now clickable. Range rendering shows the area of abilities. Quick cast option to bypass the action queue.
 
+![Range Rendering](/static/img/screenshot-range-rendering.jpg)
+
 ## What's next
 
 The current goal is to iterate on the gameplay loop from level 1 to 5 in a starter zone inspired by Mulgore, with its quests, items, and mobs.
