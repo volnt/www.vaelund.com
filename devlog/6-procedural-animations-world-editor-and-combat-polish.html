@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>#6: Procedural animations, world editor, and combat polish -- Vaelund Devlog</title>
+  <link rel="stylesheet" href="/static/css/devlog.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<body>
+  <nav class="devlog-nav">
+    <a href="/#devlog" class="back-link">← Back to site</a>
+    <a href="/" class="site-link">Vaelund</a>
+  </nav>
+  <main class="devlog-post">
+    <header class="post-header">
+      <div class="post-meta">
+        <span class="post-date">07 May 2026</span>
+        <span class="post-tag">progress</span>
+      </div>
+      <h1 class="post-title">#6: Procedural animations, world editor, and combat polish</h1>
+    </header>
+    <div class="post-body">
+<p><strong>TL;DR</strong> -- Switched to procedural player animations to solve the asset production bottleneck, re-evaluated world editor tools, optimized performance using <a href="https://renderdoc.org/">RenderDoc</a>, and added the "Chief" mini-boss along with a batch of new world tiles.</p>
+<h2>What I did</h2>
+<h3>Solving the asset bottleneck: Procedural animations</h3>
+<p>The biggest shift this week was moving towards procedural animations for the player. Previously, with traditional sprite sheets, adding a single new piece of armor or a weapon required drawing it for every frame of every animation in every direction. With our current set of animations (around 40 frames total across 2 directions, mirrored to 4), that’s a combinatorial explosion of work.</p>
+<p>By using procedural animation, we only need to draw <strong>two frames</strong> per item (one per direction). The engine then handles the "bobbing" and movement logic. It’s a massive reduction in asset production load and lets us scale the equipment system much faster.</p>
+<h3>World Editor: Re-evaluating the approach</h3>
+<p>Tooling is hard. I’m currently evaluating existing industry standards like <a href="https://www.mapeditor.org/"><strong>Tiled</strong></a> to see how they integrate into our pipeline. I'll report back on how that test goes.</p>
+<h3>Performance: RenderDoc to the rescue</h3>
+<p>I added background tiles to the world this week, but my first implementation was too naive. FPS dropped from a smooth 60+ down to 15. I spent a lot of time in <a href="https://renderdoc.org/">RenderDoc</a> analyzing the draw calls and pipeline. It made it incredibly easy to see exactly where the bottleneck was. After some refactoring and optimization, we’re back to full speed even with the new tile rendering.</p>
+<h3>New Tiles</h3>
+<p>The world is starting to look like a world. Here are some of the new tiles I've added:</p>
+<p><img src="/static/img/tiles/diablo_0.png" alt="Tile 0" style="max-width:100%;"> <img src="/static/img/tiles/diablo_1.png" alt="Tile 1" style="max-width:100%;"> <img src="/static/img/tiles/diablo_2.png" alt="Tile 2" style="max-width:100%;"> <img src="/static/img/tiles/diablo_3.png" alt="Tile 3" style="max-width:100%;"> <img src="/static/img/tiles/diablo_4.png" alt="Tile 4" style="max-width:100%;"></p>
+<h3>Combat updates: The "Chief"</h3>
+<p>Added the <strong>Chief</strong>, a new mini-boss with its own unique patterns. The Chief uses a special spell and spawns adds (other mobs) for defense, making combat encounters more unique.</p>
+<ul>
+<li><strong>Target of Target (ToT) frame:</strong> Added to the UI so you can see who a mob is currently hitting.</li>
+<li><strong>Cast while moving:</strong> Some abilities can now be cast while the player is moving, improving kiting.</li>
+<li><strong>Wrath update:</strong> Now emits 4 damaging projectiles.</li>
+</ul>
+<p><img src="/static/img/screenshot-wrath-impact.jpg" alt="Wrath Impact" style="max-width:100%;"></p>
+<ul>
+<li><strong>Teleport:</strong> Implemented a quick repositioning spell.</li>
+<li><strong>Visual feedback:</strong> Added flashing red cells and abilities when damage is dealt.</li>
+</ul>
+<h3>Bug fixes</h3>
+<ul>
+<li>Fix aggro synchronization between client and server.</li>
+<li>Fix quest objective tracking and item inventory updates.</li>
+<li>Fix patrolling behavior for mobs to prevent "jitter".</li>
+<li>Fix z-index issues for combat UI elements.</li>
+<li>Fix range computation for circular and line abilities.</li>
+<li>Fix tile despawning when exiting the game state.</li>
+</ul>
+<h2>What's next</h2>
+<p>Testing <a href="https://www.mapeditor.org/">Tiled</a> for map design, continuing work on the procedural animation system, and developing the level 1-5 starter zone logic.</p>
+    </div>
+    <footer class="post-footer">
+      <a href="/devlog/" class="back-link">← Back to Devlog</a>
+    </footer>
+  </main>
+</body>
+</html>
