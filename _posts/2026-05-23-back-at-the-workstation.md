@@ -18,7 +18,3 @@ The break is over. I'm back at my desk and I don't have any more travel or time 
 Priority #1 is regaining momentum. I'll be picking up where I left off:
 - Testing [Tiled](https://www.mapeditor.org/) for map design integration.
 - Finalizing the procedural player animation system to bypass the asset production bottleneck.
-
----
-
-`python3 scripts/generate-devlog.py` when ready to publish.
